@@ -1,0 +1,40 @@
+<% include('../layouts/header.ejs') %>
+
+  <title>New User</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+
+  <% if( locals.message ){ %>
+    <div style="color: green; transform: translate(0,-14.5rem);" class="detials" id="hide">
+      <%=message%>
+    </div>
+    <% } else if(locals.message1){%>
+      <div style="color: red; transform: translate(0,-14.5rem);" class="detials" id="hide">
+        <%=message1%>
+      </div>
+      <% } %>
+
+      <div class="form-container">
+        <h1>Add New User</h1>
+        <form action="" method="post">
+          <div class="form-group">
+            <input type="text" name="fname" placeholder="First Name" pattern="[A-Za-z]+" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="lname" placeholder="Last Name" pattern="[A-Za-z]+" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="mobile" placeholder="Phone Number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="Password"  pattern="^(?=\S*\d)(?=\S*[a-z])(?=\S*[A-Z])\S{8,}$" required>
+          </div>
+          <input type="submit" value="Add User" class="btn">
+        </form>
+        <p><a href="/admin/userdetials">Back</a></p>
+      </div>
+      <script src="/javascript/script.js"></script>
+
+      <% include('../layouts/footer.ejs') %>

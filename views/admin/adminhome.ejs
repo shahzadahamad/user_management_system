@@ -1,0 +1,18 @@
+<% include('../layouts/header.ejs') %>
+
+<title>Home</title>
+<link rel="stylesheet" href="/stylesheet/style1.css">
+  
+  <header class="nav">
+    <div class="nav-text">
+      <p><a href="/admin">Home</a></p>
+      <p><a href="/admin/userdetials">User Detials</a></p>
+    </div>
+  </header>
+    <div style="width: 400px; margin-top: 170px;" class="form-container">
+      <h1 style="text-align: center; margin-bottom: 20px;">Welcome, <%= admin.username %>
+      </h1>
+      <p><a href="/admin/logout">Logout</a></p>
+    </div>
+
+  <% include('../layouts/footer.ejs') %>

@@ -1,0 +1,44 @@
+<% include('../layouts/header.ejs') %>
+
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+
+  <% if( locals.message1 ){ %>
+    <div style="color: green; transform: translate(0,-16rem);" class="detials" id="hide">
+      <%=message1%>
+    </div>
+    <% } else if(locals.message){%>
+      <div style="color: red; transform: translate(0,-16rem);" class="detials" id="hide">
+        <%=message%>
+      </div>
+      <% } %>
+
+      <div class="form-container">
+        <h1>SignUp</h1>
+        <form method="post">
+          <div class="form-group">
+            <input type="text" name="fname" placeholder="First Name" pattern="[A-Za-z]+" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="lname" placeholder="Last Name" pattern="[A-Za-z]+" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="mobile" step="any" placeholder="Phone Number" pattern="[0-9]{10}" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="Password"  pattern="^(?=\S*\d)(?=\S*[a-z])(?=\S*[A-Z])\S{8,}$" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name="cpassword" placeholder="Confirm Password" required>
+          </div>
+          <input type="submit" value="SignUP" class="btn">
+          <p>Already have an account? <a href="/">login</a></p>
+        </form>
+      </div>
+
+      <script src="/javascript/script.js"></script>
+
+      <% include('../layouts/footer.ejs') %>

@@ -1,0 +1,26 @@
+<% include('../layouts/header.ejs') %>
+
+  <title>Login</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+
+  <% if( locals.message ){ %>
+    <div style="transform: translate(0,-9rem);" class="detials" id="hide" >
+      <%=message%>
+    </div>
+    <% } %>
+      <div class="form-container">
+        <h1>Admin Login</h1>
+        <form action="/admin/login" method="post">
+          <div class="form-group">
+            <input type="text" name="username" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="password" required>
+          </div>
+          <input type="submit" value="Login" class="btn">
+        </form>
+      </div>
+
+      <script src="/javascript/script.js"></script>
+
+      <% include('../layouts/footer.ejs') %>

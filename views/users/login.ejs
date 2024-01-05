@@ -1,0 +1,27 @@
+<% include('../layouts/header.ejs') %>
+
+  <title>Login</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+
+  <% if( locals.message ){ %>
+    <div class="detials" id="hide" >
+      <%=message%>
+    </div>
+    <% } %>
+      <div class="form-container">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="password" required>
+          </div>
+          <input type="submit" value="Login" class="btn">
+          <p>Don't have an account? <a href="/signup">Signup</a></p>
+        </form>
+      </div>
+
+      <script src="/javascript/script.js"></script>
+
+      <% include('../layouts/footer.ejs') %>

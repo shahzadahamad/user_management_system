@@ -1,0 +1,84 @@
+<% include('../layouts/header.ejs') %>
+
+  <link rel="stylesheet" href="/stylesheet/style1.css">
+  <!-- jQuery UI CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <!-- DataTables jQuery UI CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.jqueryui.min.css">
+  <!-- DataTables Scroller jQuery UI CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/scroller/2.1.1/css/scroller.jqueryui.min.css">
+  
+  <title>User Detials</title>
+
+  <header class="nav">
+    <div class="nav-text">
+      <p><a href="/admin/home">Home</a></p>
+      <p><a href="/admin/userdetials">User Detials</a></p>
+      <p><a href="/admin/newuser">Add New User</a></p>
+    </div>
+  </header>
+
+  <div style="width: 80%;background-color: #ad1d40; margin-top: -6rem;" class="form-container">
+    <table id="userTable" style="text-align: center;">
+      <thead>
+      <tr>
+        <th>No</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(users.length>0){%>
+        <% for(let i=0;i < users.length;i++){ %>
+          <tr>
+            <td>
+              <%= i+1 %>
+            </td>
+            <td>
+              <%= users[i].firstname %>
+            </td>
+            <td>
+              <%= users[i].lastname %>
+            </td>
+            <td>
+              <%= users[i].email %>
+            </td>
+            <td>
+              <%= users[i].mobile %>
+            </td>
+            <td>
+              <div class="ed">
+                <a href="/admin/edituser?id=<%= users[i]._id %>">Edit</a>
+                <a href="/admin/deleteuser?id=<%= users[i]._id %>">Delete</a>
+              </div>
+            </td>
+          </tr>
+          <% }%>
+            <% } else { %>
+              <tr>
+                <td colspan="5">User Not Found</td>
+              </tr>
+              <% } %>
+            </tbody>
+    </table>
+  </div>
+
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- DataTables Core JavaScript -->
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+<!-- DataTables jQuery UI Integration -->
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.jqueryui.min.js"></script>
+
+<!-- DataTables Scroller Extension -->
+<script src="https://cdn.datatables.net/scroller/2.1.1/js/dataTables.scroller.min.js"></script>
+
+  <script src="/javascript/script.js"></script>
+
+  
+  <% include('../layouts/footer.ejs') %>

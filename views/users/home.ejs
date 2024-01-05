@@ -1,0 +1,34 @@
+<% include('../layouts/header.ejs') %>
+
+  <title>Home</title>
+  <link rel="stylesheet" href="/stylesheet/style.css">
+
+  <div style="width: 500px;" class="form-container">
+    <h1>Welcome, <%=user.name%>
+    </h1>
+    <table>
+      <tr>
+        <td>
+          <h3>Email :</h3>
+        </td>
+        <td>
+          <h3>
+            <%=user.email%>
+          </h3>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h3>Phone :</h3>
+        </td>
+        <td>
+          <h3>
+            <%= user.mobile %>
+          </h3>
+        </td>
+      </tr>
+    </table>
+    <P><a href="/logout">Logout</a></P>
+  </div>
+
+  <% include('../layouts/footer.ejs') %>
